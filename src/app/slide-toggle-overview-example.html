@@ -1,0 +1,33 @@
+
+
+
+<form [formGroup]="myform">
+ 
+    notify :
+  <select formControlName="notifyVia">
+    <option *ngFor="let item of notifyOptions" [ngValue]="item">{{item}}</option>
+  </select>
+  <br>
+  <br>
+   
+   
+  email :
+  <input type="text" formControlName= "email"/>
+  <br>
+  <br>
+  mobile :
+  <input type="text" formControlName= "mobile"/>
+  <br>
+  <br>
+   
+  <button [disabled]="!myform.valid" type="submit" >Submit </button>
+  </form>
+   
+  <br>
+  <br>
+   
+  Form valid ---- {{myform.valid}}  <br>
+   
+  email valid-- {{myform.controls['email'].valid}}  <br>
+   
+  mobile valid -- {{myform.controls['mobile'].valid}}  <br>
